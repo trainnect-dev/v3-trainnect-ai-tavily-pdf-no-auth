@@ -2,7 +2,7 @@ import { Toaster } from 'sonner';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import type { Metadata } from 'next';
-import { LayoutDashboard, Search, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, Search, MessageSquare, Bot } from 'lucide-react';
 import { Sidebar, SidebarBody, SidebarLink } from '@/components/sidebar';
 
 import './globals.css';
@@ -38,6 +38,13 @@ export default function RootLayout({
                     label: "AI Search",
                     href: "/tavily-ai-search",
                     icon: <Search size={20} />,
+                  }}
+                />
+                <SidebarLink
+                  link={{
+                    label: "AI Agents",
+                    href: "/ai-agents",
+                    icon: <Bot size={20} />,
                   }}
                 />
                 <SidebarLink

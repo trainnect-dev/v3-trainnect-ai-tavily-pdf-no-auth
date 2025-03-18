@@ -1,10 +1,10 @@
-<a href="https://ai-sdk-reasoning.vercel.app/">
-  <img alt="Next.js 15 and App Router-ready AI chatbot with reasoning." src="app/opengraph-image.png">
-  <h1 align="center">AI SDK Reasoning</h1>
+<a href="https://aiengineeringforgrandmas.xyz/">
+  <img alt="Next.js 15 App Router - React 19 - Multi-LLM Tavily Search Powered Reasoning Assistant." src="app/opengraph-image.png">
+  <h1 align="center">Multi-LLM Tavily Search Powered Reasoning Assistant</h1>
 </a>
 
 <p align="center">
-  An Open-Source AI Chatbot Template Built With Next.js, Multiple LLM Providers, and the AI SDK by Vercel.
+  An Open-Source Next.js 15 App Router - Multi-LLM Tavily Search Powered Reasoning Assistant, and the Vercel AI SDK .
 </p>
 
 <p align="center">
@@ -53,6 +53,15 @@
     - Toggle web search on/off with a simple switch
     - Provides up-to-date information from the web to improve AI responses
     - Works with all supported models
+  - AI Agents - Multi-step AI processing with model switching
+    - Primary model performs research using Tavily search
+    - Secondary model processes and synthesizes the results
+    - Comprehensive logging system:
+      - `tavily_output/` - Contains raw search results from the primary model
+      - `ai_agents_output/` - Contains both models' outputs:
+        - Individual JSON files: `ai-agents-{timestamp}-{primary-model}-{secondary-model}.json`
+        - Summary log: `ai-agents-log.jsonl`
+      - Real-time log monitoring: `tail -f ai_agents_output/ai-agents-log.jsonl`
 - [shadcn/ui](https://ui.shadcn.com)
   - Styling with [Tailwind CSS](https://tailwindcss.com)
   - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
@@ -145,3 +154,6 @@ rm -rf node_modules && pnpm store prune && pnpm install && pnpm dev
 ```
 
 ## Shut down the npm server
+
+```bash
+pkill -f "npm"
